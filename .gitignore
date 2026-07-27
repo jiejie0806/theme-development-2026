@@ -1,0 +1,14 @@
+# 依赖
+node_modules/
+
+# 系统文件
+.DS_Store
+*.log
+
+# Shopify 主题特有
+config/settings_data.json
+locales/*.json.backup
+
+# 编辑器
+.vscode/
+.idea/
