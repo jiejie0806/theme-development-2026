@@ -74,6 +74,7 @@ shopify theme pull --store theme-development-2026-bbh8p7a3.myshopify.com --only 
 
 ```bash
 # 推送到未发布主题（测试用，不影响线上）
+shopify theme push --theme=主题ID
 shopify theme push --store theme-development-2026-bbh8p7a3.myshopify.com --unpublished
 
 # 推送并发布（替换线上主题）

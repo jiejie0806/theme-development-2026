@@ -1,0 +1,48 @@
+{% liquid 
+  if shop.metaobjects.free_shipping.pengpeng.amount != blank
+    assign free_shipping_threshold = shop.metaobjects.free_shipping.pengpeng.amount | times: 100
+  else
+  assign free_shipping_threshold = 99900
+  endif
+  assign cart_total = cart.total_price
+  assign free_shipping_diff = free_shipping_threshold | minus: cart_total
+  assign free_shipping_bg_color = shop.metaobjects.free_shipping.pengpeng.color | default: '#fef8e7'
+%}
+<style>
+  .free_shipping {
+    background-color: {{ free_shipping_bg_color }};
+    color: #00896c;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .not_free_shipping {
+    background-color: {{ free_shipping_bg_color }};
+    color: #d0104c;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .jindutiao-wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .free_shipping_text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+</style>
+<div class="jindutiao-wrapper">
+  <p class="free_shipping_text{% if free_shipping_diff > 0 %} not_free_shipping{% else %} free_shipping{% endif %}">
+    {% if free_shipping_diff > 0 %}
+      <span>Just {{ free_shipping_diff | money }} away from free shipping!</span>
+    {% elsif free_shipping_diff <= 0 %}
+      <span>Enjoy Free Shipping!</span>
+    {% endif %}
+  </p>
+</div>
