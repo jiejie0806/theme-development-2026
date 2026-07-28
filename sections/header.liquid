@@ -30,12 +30,6 @@
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
-{% if template == 'index' %}
-  <style>
-    .section-header{margin-bottom:0}.header-wrapper--border-bottom{border-bottom:.1rem solid rgba(255,255,255,.08)}.overflow-hidden-desktop .header-wrapper,.overflow-hidden-tablet .header-wrapper{position:initial;width:initial;background:initial;color:initial;background:var(--gradient-background)}.header-wrapper summary.header__menu-item+ul span,.header-wrapper summary.header__menu-item+ul svg,.overflow-hidden-desktop .header-wrapper .disclosure__button svg,.overflow-hidden-desktop .header-wrapper .disclosure__button>span,.overflow-hidden-desktop .header-wrapper .list-menu span,.overflow-hidden-desktop .header-wrapper a svg,.overflow-hidden-desktop .header-wrapper details>span,.overflow-hidden-desktop .header-wrapper h1.header__heading span.h2,.overflow-hidden-desktop .header-wrapper summary svg,.overflow-hidden-desktop details[open]>.header__menu-item,.overflow-hidden-tablet .header-wrapper .disclosure__button svg,.overflow-hidden-tablet .header-wrapper .disclosure__button>span,.overflow-hidden-tablet .header-wrapper .list-menu span,.overflow-hidden-tablet .header-wrapper a svg,.overflow-hidden-tablet .header-wrapper details>span,.overflow-hidden-tablet .header-wrapper h1.header__heading span.h2,.overflow-hidden-tablet .header-wrapper summary svg,.overflow-hidden-tablet details[open]>.header__menu-item,.scrolled-past-header .header-wrapper .disclosure__button svg,.scrolled-past-header .header-wrapper .disclosure__button>span,.scrolled-past-header .header-wrapper .list-menu span,.scrolled-past-header .header-wrapper a svg,.scrolled-past-header .header-wrapper details>span,.scrolled-past-header .header-wrapper h1.header__heading span.h2,.scrolled-past-header .header-wrapper summary svg,.scrolled-past-header details[open]>.header__menu-item{color:rgba(var(--color-foreground),.75)!important}.header-wrapper{position:absolute;width:100%;background:0 0;color:#fff}.header-wrapper .disclosure__button svg,.header-wrapper .disclosure__button>span,.header-wrapper .list-menu span,.header-wrapper a svg,.header-wrapper details>span,.header-wrapper h1.header__heading span.h2,.header-wrapper summary svg,details[open]>.header__menu-item{color:#fff!important}.scrolled-past-header .header-wrapper{position:fixed;width:100%;background:#000;color:#121212!important; box-shadow:0 2px 8px rgba(0,0,0,0.08)}.header-localization .disclosure .localization-form__select:hover{text-decoration-color:white}
-  </style>
-{% endif %}
-
 <style>
   header-drawer {
     justify-self: start;
@@ -98,9 +92,9 @@
 </style>
 
 {%- style -%}
-  {%- if section.settings.custom_bg_color != blank and section.settings.custom_bg_color != 'transparent' -%}
+  {%- if section.settings.custom_bg_color != blank -%}
     .header-wrapper {
-      background-color: {{ section.settings.custom_bg_color }} !important;
+      background-color: {{ section.settings.custom_bg_color }} ;
     }
   {%- endif -%}
 
@@ -143,6 +137,12 @@
     }
   }
 {%- endstyle -%}
+
+{% if template == 'index' %}
+  <style>
+    .section-header{margin-bottom:0}.header-wrapper--border-bottom{border-bottom:.1rem solid rgba(255,255,255,.08)}.overflow-hidden-desktop .header-wrapper,.overflow-hidden-tablet .header-wrapper{position:initial;width:initial;background:initial;color:initial;background:var(--gradient-background)}.header-wrapper summary.header__menu-item+ul span,.header-wrapper summary.header__menu-item+ul svg,.overflow-hidden-desktop .header-wrapper .disclosure__button svg,.overflow-hidden-desktop .header-wrapper .disclosure__button>span,.overflow-hidden-desktop .header-wrapper .list-menu span,.overflow-hidden-desktop .header-wrapper a svg,.overflow-hidden-desktop .header-wrapper details>span,.overflow-hidden-desktop .header-wrapper h1.header__heading span.h2,.overflow-hidden-desktop .header-wrapper summary svg,.overflow-hidden-desktop details[open]>.header__menu-item,.overflow-hidden-tablet .header-wrapper .disclosure__button svg,.overflow-hidden-tablet .header-wrapper .disclosure__button>span,.overflow-hidden-tablet .header-wrapper .list-menu span,.overflow-hidden-tablet .header-wrapper a svg,.overflow-hidden-tablet .header-wrapper details>span,.overflow-hidden-tablet .header-wrapper h1.header__heading span.h2,.overflow-hidden-tablet .header-wrapper summary svg,.overflow-hidden-tablet details[open]>.header__menu-item,.scrolled-past-header .header-wrapper .disclosure__button svg,.scrolled-past-header .header-wrapper .disclosure__button>span,.scrolled-past-header .header-wrapper .list-menu span,.scrolled-past-header .header-wrapper a svg,.scrolled-past-header .header-wrapper details>span,.scrolled-past-header .header-wrapper h1.header__heading span.h2,.scrolled-past-header .header-wrapper summary svg,.scrolled-past-header details[open]>.header__menu-item{color:rgba(var(--color-foreground),.75)!important}.header-wrapper{position:absolute;width:100%;background:0 0;color:#fff}.header-wrapper .disclosure__button svg,.header-wrapper .disclosure__button>span,.header-wrapper .list-menu span,.header-wrapper a svg,.header-wrapper details>span,.header-wrapper h1.header__heading span.h2,.header-wrapper summary svg,details[open]>.header__menu-item{color:#fff!important}.scrolled-past-header .header-wrapper{position:fixed;width:100%;background:#000;color:#121212!important; box-shadow:0 2px 8px rgba(0,0,0,0.08)}.header-localization .disclosure .localization-form__select:hover{text-decoration-color:white}
+  </style>
+{% endif %}
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
