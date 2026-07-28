@@ -3159,3 +3159,43 @@ details-disclosure > details {
   margin-bottom: 16px;
   line-height: 1.5;
 }
+
+/* 详情页缩略图左侧样式 */
+@media screen and (min-width: 769px) {
+  .product--thumbnail_slider .thumbnail-slider {
+    align-items: self-start;
+  }
+  .product--thumbnail_slider {
+    position: relative;
+  }
+  .product--thumbnail_slider media-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .product--thumbnail_slider .slider-mobile-gutter:not(.thumbnail-slider) {
+    width: 100%;
+  }
+  .product--thumbnail_slider .thumbnail-slider {
+    width: 100px;
+    padding-right: 10px;
+  }
+  .product--thumbnail_slider .slider-button {
+    display: none !important;
+  }
+  .product--thumbnail_slider
+    .thumbnail-slider
+    .thumbnail-list.slider--tablet-up {
+    height: 100%;
+    overflow: scroll;
+    padding: 0;
+    display: block;
+  }
+  .product--thumbnail_slider
+    .thumbnail-slider
+    .thumbnail-list.slider--tablet-up
+    .thumbnail-list__item.slider__slide {
+    width: 100%;
+    margin-bottom: 2px;
+    /* 可根据实际图片宽高比通过调整 padding 以实现最佳效果 */
+  }
+}
