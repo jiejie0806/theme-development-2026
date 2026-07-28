@@ -54,9 +54,17 @@
           disabled
           class="product-variant-id"
         >
-
+          {%- if is_pre_order -%}
+            <input type="hidden" name="properties[_pre_order]" value="预定商品">
+          {%- endif -%}
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+        {%- assign is_pre_order = product.metafields.custom.pre_order -%}
+        {%- if is_pre_order -%}
+          <div class="product-form__preorder-notice">
+            此商品为预定商品，付款后将按预定顺序发货。
+          </div>
         {%- endif -%}
 
         <div class="product-form__buttons">
@@ -74,12 +82,16 @@
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-              disabled
-            {% endif %}
+            {%- unless is_pre_order -%}
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                disabled
+              {% endif %}
+            {%- endunless -%}
           >
             <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- if product.metafields.custom.pre_order == true -%}
+                Pre Order
+              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
