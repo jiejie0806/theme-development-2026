@@ -13,7 +13,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "disabled": true,
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
@@ -28,6 +27,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {}
     },
     "header": {
@@ -43,6 +43,9 @@
         "show_line_separator": true,
         "color_scheme": "inverse",
         "enable_country_selector": false,
+        "custom_bg_color": "#1D1919",
+        "custom_text_color": "#FFFFFF",
+        "custom_link_hover_color": "#FFFFFF",
         "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
