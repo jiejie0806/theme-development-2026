@@ -45,10 +45,28 @@
             "show_gift_card_recipient": false
           }
         },
+        "swish_wishlist_king_wishlist_button_block_NKL3wD": {
+          "type": "shopify://apps/swish-wishlist-king/blocks/wishlist-button-block/194f5011-a43c-4b22-b12e-eaf20dc4506a",
+          "settings": {
+            "button_style": "plain_accent_1",
+            "button_alignment": "center",
+            "button_content_alignment": "center",
+            "button_margin_top": 0,
+            "button_margin_bottom": 0,
+            "button_max_width": 0,
+            "button_padding_horizontal": 15,
+            "button_full_width": true,
+            "button_show_text": true,
+            "button_show_icon": true,
+            "icon_size": 18,
+            "icon_stroke_width": 1,
+            "icon_offset_vertical": 0
+          }
+        },
         "custom_liquid_kwkJr6": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<style>\n  .methods-of-payment img { padding: 0.2em; }\n  .lt-ie9 .methods-of-payment, .ie8 .methods-of-payment, .oldie .methods-of-payment { display: none; }\n  .methods-of-payment { display: flex; justify-content: center; }\n  span.methods-of-payment { margin-top: -8px; width: 27.5em; }\n</style>\n<span class=\"methods-of-payment\">\n  <img src=\"{{ 'paypal' | payment_type_img_url }}\" height=\"35\" alt=\"paypal\" />\n  <img src=\"{{ 'visa' | payment_type_img_url }}\" height=\"35\" alt=\"visa\" />\n  <img src=\"{{ 'master' | payment_type_img_url }}\" height=\"35\" alt=\"master\" />\n</span>"
+            "custom_liquid": "<style>\n  .methods-of-payment img { padding: 0.2em; }\n  .lt-ie9 .methods-of-payment, .ie8 .methods-of-payment, .oldie .methods-of-payment { display: none; }\n  .methods-of-payment { display: flex; justify-content: center; }\n  span.methods-of-payment { margin-top: -8px; }\n</style>\n<span class=\"methods-of-payment\">\n  <img src=\"{{ 'paypal' | payment_type_img_url }}\" height=\"35\" alt=\"paypal\" />\n  <img src=\"{{ 'visa' | payment_type_img_url }}\" height=\"35\" alt=\"visa\" />\n  <img src=\"{{ 'master' | payment_type_img_url }}\" height=\"35\" alt=\"master\" />\n</span>"
           }
         },
         "description": {
@@ -69,6 +87,7 @@
         "quantity_selector",
         "price",
         "buy_buttons",
+        "swish_wishlist_king_wishlist_button_block_NKL3wD",
         "custom_liquid_kwkJr6",
         "description",
         "share"
