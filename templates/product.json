@@ -45,6 +45,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "custom_liquid_kwkJr6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .methods-of-payment img { padding: 0.2em; }\n  .lt-ie9 .methods-of-payment, .ie8 .methods-of-payment, .oldie .methods-of-payment { display: none; }\n  .methods-of-payment { display: flex; justify-content: center; }\n  span.methods-of-payment { margin-top: -8px; width: 27.5em; }\n</style>\n<span class=\"methods-of-payment\">\n  <img src=\"{{ 'paypal' | payment_type_img_url }}\" height=\"35\" alt=\"paypal\" />\n  <img src=\"{{ 'visa' | payment_type_img_url }}\" height=\"35\" alt=\"visa\" />\n  <img src=\"{{ 'master' | payment_type_img_url }}\" height=\"35\" alt=\"master\" />\n</span>"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -64,6 +70,7 @@
         "quantity_selector",
         "price",
         "buy_buttons",
+        "custom_liquid_kwkJr6",
         "description",
         "share"
       ],
