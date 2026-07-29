@@ -3176,7 +3176,7 @@ details-disclosure > details {
     width: 100%;
   }
   .product--thumbnail_slider .thumbnail-slider {
-    width: 100px;
+    width: 137px;
     padding-right: 10px;
   }
   .product--thumbnail_slider .slider-button {
@@ -3189,13 +3189,14 @@ details-disclosure > details {
     overflow: scroll;
     padding: 0;
     display: block;
+    margin-top:20px;
   }
   .product--thumbnail_slider
     .thumbnail-slider
     .thumbnail-list.slider--tablet-up
     .thumbnail-list__item.slider__slide {
     width: 100%;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
     /* 可根据实际图片宽高比通过调整 padding 以实现最佳效果 */
   }
 }
