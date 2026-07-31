@@ -243,7 +243,7 @@
       }
     </script>
   </head>
-
+  {% render 'sticky-cart-bar' %}
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -275,6 +275,7 @@
         cart_url: '{{ routes.cart_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}',
       };
+      window.shopCurrency = '{{ shop.currency }}';
 
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,

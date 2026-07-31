@@ -1,0 +1,28 @@
+
+<sticky-cart-bar class="sticky-cart-bar">
+  <span class="sticky-bar__label">购物车总价</span>
+  <span class="sticky-bar__price">{{ cart.total_price | money }}</span>
+</sticky-cart-bar>
+
+<style>
+  .sticky-cart-bar {
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: green;
+  color: #fff;
+  padding: 12px 12px;
+  display:flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 9999;
+  transition: background 0.3s;
+  }
+
+  .sticky-cart-bar.is-flash {
+  background: red;
+  }
+</style>
+
+<script src="{{ 'sticky-cart-bar.js' | asset_url }}" defer="defer"></script>
