@@ -68,7 +68,7 @@
 </style>
 <div class="breadcrumbs">
   <li>
-    <a href="/" target="_blank">Home /&nbsp;</a>
+    <a href="{{ routes.root_url }}" target="_blank">Home /&nbsp;</a>
   </li>
   {% unless product.metafields.multiple.breadcrumbs.value == blank %}
     {% for clt in product.metafields.multiple.breadcrumbs.value %}
@@ -78,7 +78,7 @@
     {% endfor %}
     {% else %} 
     <li>
-      <a href="/collections/{{ product.collections.first.handle }}" target="_blank">{{ product.collections.first.title }} /&nbsp;</a>
+      <a href="{{ routes.collections_url }}/{{ product.collections.first.handle }}" target="_blank">{{ product.collections.first.title }} /&nbsp;</a>
       <a href="#" class="line_none">{{ product.title }}</a>
     </li>
   {% endunless %}
